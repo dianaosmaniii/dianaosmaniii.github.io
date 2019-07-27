@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+  <title>Hartografia</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/custom.css">
+  <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&callback=initMap"></script>
+  <script type="text/javascript">
+    var map;
+    function initMap()
+    {
+      map = new google.maps.Map(document.getElementById('map'),
+      {	center: {lat: 42.648378, lng: 21.166840},
+        zoom: 10
+      });
+    }
+  </script>
+<  <style type="text/css">
+    html, body { height: 100%; margin: 0; padding: 0; }
+    #map { height: 100%; }
+  </style>
+</head>
+<body><!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Kryefaqe</a>
+    <div class="w3-dropdown-hover">
+      <button class="w3-button">Ushtrimi 2</button>
+      <div class="w3-dropdown-content w3-bar-block w3-border">
+        <a href="simplemap.html" class="w3-bar-item w3-button">A simple Map</a>
+        <a href="syncsimplemap.html" class="w3-bar-item w3-button">Synchronous load</a>
+        <a href="#" class="w3-bar-item w3-button">Controls</a>
+        <a href="#" class="w3-bar-item w3-button">Event click</a>
+        <a href="#" class="w3-bar-item w3-button">Displaying Coordinates</a>
+        <a href="#" class="w3-bar-item w3-button">Tilt view rotations</a>
+        <a href="#" class="w3-bar-item w3-button">Markers</a>
+        <a href="#" class="w3-bar-item w3-button">Info Window</a>
+        <a href="#" class="w3-bar-item w3-button">Creating a Polyline</a>
+        <a href="#" class="w3-bar-item w3-button">Dashed Polyline</a>
+        <a href="#" class="w3-bar-item w3-button">Drawing Polyline</a>
+        <a href="#" class="w3-bar-item w3-button">Creating a Multipolygon</a>
+        <a href="#" class="w3-bar-item w3-button">Editing a Polygon</a>
+        <a href="#" class="w3-bar-item w3-button">Ground Overlay</a>
+      </div>
+    </div>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 3</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 4</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 4</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 4</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 4</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 4</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">A simple Map</h1>
+</header>
+
+<!-- First Grid -->
+<div id="map"class="w3-row-padding w3-padding-64 w3-container">
+
+</div>
+
+<script src="../../js/menutoogle.js"></script>
+
+</body>
+</html>

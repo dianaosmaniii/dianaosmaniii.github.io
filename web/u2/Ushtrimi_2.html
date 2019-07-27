@@ -1,0 +1,642 @@
+Google Maps API
+
+1. Google Maps API – A Simple Map
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?v=3&callback=initMap"></script>
+
+		<style type="text/css">
+			html, body { height: 100%; margin: 0; padding: 0; }
+			#map { height: 100%; }
+		</style>
+
+	    <script type="text/javascript">
+			var map;
+			function initMap()
+			{
+				map = new google.maps.Map(document.getElementById('map'),
+				{	center: {lat: 42.648378, lng: 21.166840},
+					zoom: 10
+				});
+			}
+	    </script>
+		 <script type="text/javascript">
+			var map1;
+			function initMap1()
+			{
+				map = new google.maps.Map1(document.getElementById('map1'),
+				{	center: {lat: 42.648378, lng: 21.166840},
+					zoom: 2
+				});
+			}
+	    </script>
+	</head>
+	<body>
+		<div id="map"></div>
+	</body>
+</html>
+
+
+
+2. Google Maps API – Synchronous load
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			html, body { height: 100%; margin: 0; padding: 0; }
+			#map { height: 100%; }
+		</style>
+	</head>
+	<body>
+		<div id="map"></div>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3"></script>
+		<script type="text/javascript">
+			var map = new google.maps.Map(document.getElementById('map'),
+			{
+				center: {lat: 42.648378, lng: 21.166840},
+				zoom: 18
+			});
+		</script>
+	</body>
+</html>
+
+
+3. Google Maps API – Controls
+
+	var map = new google.maps.Map(document.getElementById('map'),
+	{
+		center: {lat: 42.648378, lng: 21.166840},
+		zoom: 20,
+		disableDefaultUI: true,
+		zoomControl: true,
+		scaleControl: true,
+		mapTypeControl: true,
+		mapTypeControlOptions: 
+		{
+			style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR, //
+			position: google.maps.ControlPosition.TOP_CENTER
+				// LEFT/RIGHT/TOP/BOTTOM_LEFT/CENTER/RIGHT
+		},
+		// mapTypeId: google.maps.MapTypeId.ROADMAP,
+		mapTypeId: google.maps.MapTypeId.TERRAIN,
+		streetViewControl: true,
+		rotateControl: true
+	});
+	
+	
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			html, body { height: 100%; margin: 0; padding: 0; }
+			#map { height: 100%; }
+		</style>
+	</head>
+	<body>
+		<div id="map"></div>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3"></script>
+		<script type="text/javascript">
+				var map = new google.maps.Map(document.getElementById('map'),
+				{
+					center: {lat: 42.648378, lng: 21.166840},
+					zoom: 20,
+					disableDefaultUI: true,
+					zoomControl: false,
+					scaleControl: true,
+					mapTypeControl: true,
+					mapTypeControlOptions: 
+					{
+						style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR, //
+						position: google.maps.ControlPosition.TOP_CENTER
+							// LEFT/RIGHT/TOP/BOTTOM_LEFT/CENTER/RIGHT
+					},
+					// mapTypeId: google.maps.MapTypeId.ROADMAP,
+					//mapTypeId: google.maps.MapTypeId.TERRAIN,
+					mapTypeId: google.maps.MapTypeId.SATELLITE,
+					streetViewControl: true,
+					rotateControl: true
+				});
+		</script>
+	</body>
+</html>
+
+
+>
+</html>
+
+
+
+
+4. Google Maps API – Event Click
+
+	<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			html, body { height: 100%; margin: 0; padding: 0; }
+			#map { height: 100%; }
+		</style>
+	</head>
+	<body>
+		<div id="map"></div>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3"></script>
+		<script type="text/javascript">
+				var map = new google.maps.Map(document.getElementById('map'),
+					{
+						center: {lat: 42.648378, lng: 21.166840},
+						zoom: 15,
+					});		
+					
+					var marker = new google.maps.Marker(
+					{
+						position: {lat: 42.6476536, lng: 21.1665623},
+						map: map,
+						title: 'Afrohu te Pika'
+					});
+					
+					marker.addListener('click', function()
+					{
+						map.setZoom(20);
+						map.setCenter(marker.getPosition());
+					});
+		</script>
+	</body>
+</html>
+
+
+5. Google Maps API – Displaying Coordinates
+
+
+			var infowindow = new google.maps.InfoWindow();
+
+			google.maps.event.addListener(map, 'click', function(event)
+			{
+				var lat = event.latLng.lat();
+				lat = lat.toFixed(4);
+				var lng = event.latLng.lng();
+				lng = lng.toFixed(4);
+				
+				infowindow.setContent( "Latitude: " + lat + "  Longitude: " + lng);
+				infowindow.open(map, 0);
+				infowindow.setPosition(event.latLng);
+			});
+
+			
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			html, body { height: 100%; margin: 0; padding: 0; }
+			#map { height: 100%; }
+		</style>
+	</head>
+	<body>
+		<div id="map"></div>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3"></script>
+		<script type="text/javascript">
+				var map = new google.maps.Map(document.getElementById('map'),
+					{
+						center: {lat: 42.648378, lng: 21.166840},
+						zoom: 15,
+					});		
+	
+				
+					var marker = new google.maps.Marker(
+					{
+						position: {lat: 42.6476536, lng: 21.1665623},
+						map: map,
+						title: 'Afrohu te Pika'
+					});
+					
+					marker.addListener('click', function()
+					{
+						map.setZoom(20);
+						map.setCenter(marker.getPosition());
+					});
+					// koordinatat 
+					var infowindow = new google.maps.InfoWindow();
+					google.maps.event.addListener(map, 'click', function(event)
+					{
+						var lat = event.latLng.lat();
+						lat = lat.toFixed(4);
+						var lng = event.latLng.lng();
+						lng = lng.toFixed(10);
+						infowindow.setContent( "Gjerësia: " + lat + "  Gjatësia: " + lng);
+						infowindow.open(map, 0);
+						infowindow.setPosition(event.latLng);
+					});
+
+		</script>
+	</body>
+</html>
+
+
+<script>
+// funksioni per konvertim nga degrees decimal ne DMMSS.SSSS
+					
+					function dec2dms(p1) {
+						var degint = parseInt(p1,10);
+						var minint = parseInt((p1-degint)*60,10);
+						var sec = (p1-degint-minint/60)*3600;
+						var result =  degint + "° " + minint + "' " + sec.toFixed(2) +"''";
+						return result;
+						}
+  </script>
+  
+  
+6. Google Maps API – 45° tilt view & rotation
+  <script>
+			var map = new google.maps.Map(document.getElementById('map'),
+			{
+				center: {lat: 42.648378, lng: 21.166840},,
+				zoom: 18,
+				mapTypeId: google.maps.MapTypeId.SATELLITE,
+				heading: 90,
+				tilt: 45
+			});
+
+			google.maps.event.addListener(map, 'click', function(event)
+			{
+				var heading = map.getHeading() || 0;
+				map.setHeading(heading + 90);
+			});
+
+   </script> 
+ 
+ 
+ 
+ <!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			html, body { height: 100%; margin: 0; padding: 0; }
+			#map { height: 100%; }
+		</style>
+	</head>
+	<body>
+		<div id="map"></div>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3"></script>
+		<script type="text/javascript">
+				var map = new google.maps.Map(document.getElementById('map'),
+					{
+						center: {lat: 42.648378, lng: 21.166840},
+						zoom: 15,
+						mapTypeId: google.maps.MapTypeId.SATELLITE,
+						heading: 45,
+						tilt: 45
+					});		
+	
+				
+					var marker = new google.maps.Marker(
+					{
+						position: {lat: 42.6476536, lng: 21.1665623},
+						map: map,
+						title: 'Afrohu te Pika'
+					});
+					
+					marker.addListener('click', function()
+					{
+						map.setZoom(20);
+						map.setCenter(marker.getPosition());
+					});
+					// koordinatat 
+					var infowindow = new google.maps.InfoWindow();
+					google.maps.event.addListener(map, 'click', function(event)
+					{
+						var lat = event.latLng.lat();
+						lat = lat.toFixed(4);
+						var lng = event.latLng.lng();
+						lng = lng.toFixed(10);
+						infowindow.setContent( "Gjerësia: " + lat + "  Gjatësia: " + lng);
+						infowindow.open(map, 0);
+						infowindow.setPosition(event.latLng);
+					});
+					google.maps.event.addListener(map, 'click', function(event)
+					{
+						var heading = map.getHeading() || 0;
+						map.setHeading(heading + 90);
+					});
+
+		</script>
+	</body>
+</html>
+
+7. Google Maps API – Markers
+
+<script>
+			var image = 'images/beachflag.png'; 
+			var marker = new google.maps.Marker(
+			{
+				map: map,
+				draggable: true,
+				animation: google.maps.Animation.DROP,
+				position: {lat: 59.327, lng: 18.067},
+				icon: image
+			});
+
+			marker.addListener('click', toggleBounce);
+			
+			function toggleBounce() 
+			{
+				if(marker.getAnimation() !== null) marker.setAnimation(null);
+			  	else marker.setAnimation(google.maps.Animation.BOUNCE);
+			}
+
+
+</script>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			html, body { height: 100%; margin: 0; padding: 0; }
+			#map { height: 100%; }
+		</style>
+	</head>
+	<body>
+		<div id="map"></div>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3"></script>
+		<script type="text/javascript">
+			var map = new google.maps.Map(document.getElementById('map'),
+			{
+				center: {lat: 42.648378, lng: 21.166840},
+				zoom: 18
+			});
+			
+			var image = 'img/placeholder_32.png'; 
+			var marker = new google.maps.Marker(
+			{
+				map: map,
+				draggable: true,
+				animation: google.maps.Animation.DROP,
+				position: {lat: 42.648378, lng: 21.166840},
+				icon: image
+			});
+
+			marker.addListener('click', toggleBounce);
+
+			
+			function toggleBounce() 
+			{
+				if(marker.getAnimation() !== null) marker.setAnimation(null);
+			  	else marker.setAnimation(google.maps.Animation.BOUNCE);
+			}
+
+		</script>
+	</body>
+</html>
+
+8. Google Maps API – InfoWindow
+
+<script>
+			var marker = new google.maps.Marker(
+			{
+				position: {lat: 47.4, lng: 16.3},
+				title: ’Open InfoWindow’
+				map: map
+			});
+
+			var infowindow = new google.maps.InfoWindow(
+			{
+				content: "<h1>Title</h1><p>Paragraph <b>bold text</b> normal text</p>"
+				// position: latLng, maxWidth: 200
+			});
+		
+			marker.addListener('click', function()
+			{
+				infowindow.open(map, marker);
+			});
+</script>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			html, body { height: 100%; margin: 0; padding: 0; }
+			#map { height: 100%; }
+		</style>
+	</head>
+	<body>
+		<div id="map"></div>
+		<script src="js/gmjs.js?v=3"></script>
+		<script type="text/javascript">
+			var map = new google.maps.Map(document.getElementById('map'),
+			{
+				center: {lat: 42.648378, lng: 21.166840},
+				zoom: 18
+			});
+			
+			var marker = new google.maps.Marker(
+			{
+				position: {lat: 42.647378, lng: 21.166840},
+				title: ’Open InfoWindow’
+				map: map
+			});
+
+			var infowindow = new google.maps.InfoWindow(
+			{
+				content: "<h1>Titulli</h1><p>Paragrafi <b>bold text</b> normal text</p>"
+				// position: latLng, maxWidth: 200
+			});
+		
+			marker.addListener('click', function()
+			{
+				infowindow.open(map, marker);
+			});
+		</script>
+	</body>
+</html>
+
+
+
+9. Google Maps API – Creating a polyline
+
+<script>
+			var map = new google.maps.Map(document.getElementById('map'),
+			{
+				center: {lat: 0, lng: -180},
+				zoom: 3,
+			});
+			var flightPlanCoordinates =
+			[
+				{lat: 37.772, lng: -122.214},
+				{lat: 21.291, lng: -157.821},
+				{lat: -18.142, lng: 178.431},
+				{lat: -27.467, lng: 153.027}
+			];
+			var flightPath = new google.maps.Polyline(
+			{
+				path: flightPlanCoordinates,
+				geodesic: true,
+				strokeColor: '#FF0000',
+				strokeOpacity: 1.0,
+				strokeWeight: 2
+			});
+			flightPath.setMap(map);
+</script>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			html, body { height: 100%; margin: 0; padding: 0; }
+			#map { height: 100%; }
+		</style>
+	</head>
+	<body>
+		<div id="map"></div>
+		<script src="js/gmjs.js?v=3"></script>
+		<script type="text/javascript">
+			var map = new google.maps.Map(document.getElementById('map'),
+			{
+				center: {lat: 42.648378, lng: 21.166840},
+				zoom: 18
+			});
+			
+			var flightPlanCoordinates =
+			[
+				{lat: 42.647908, lng: 21.166392},
+				{lat: 42.647780, lng: 21.166653},
+				{lat: 42.648679, lng: 21.167284},
+				{lat: 42.648779, lng: 21.167038}
+			];
+			var flightPath = new google.maps.Polyline(
+			{
+				path: flightPlanCoordinates,
+				geodesic: true,
+				strokeColor: '#FF0000',
+				strokeOpacity: 1.0,
+				strokeWeight: 2
+			});
+			flightPath.setMap(map);
+
+		</script>
+	</body>
+</html>
+
+
+11. Google Maps API – Dashed polyline
+
+			var map = new google.maps.Map(document.getElementById('map'),
+			{
+				center: {lat: 47.5, lng: 16.5}, zoom: 9,
+			});
+
+			var path =
+			[
+				{lat: 47, lng: 16}, {lat: 47, lng: 17}, {lat: 48, lng: 16}, {lat: 48, lng: 17}
+			];
+
+			var lineSymbol =
+			{
+				path: 'M 0,-1 0,1', strokeOpacity: 1, scale: 4
+			};
+
+			poly = new google.maps.Polyline(
+			{
+				path: path,
+				strokeColor: '#004060',  strokeOpacity: 0.2,  strokeWeight: 3,
+				icons: [{ icon: lineSymbol, offset: '0', repeat: '20px' }],
+				map: map
+			});
+
+			
+12. Google Maps API – Drawing a polyline
+
+			var map = new google.maps.Map(document.getElementById('map'),
+			{
+				center: {lat: 47.5, lng: 16.5},
+				zoom: 10,
+			});
+			var poly = new google.maps.Polyline(
+			{
+				strokeColor: '#004060',
+				strokeWeight: 3
+			});
+			poly.setMap(map);
+			map.addListener('click', addLatLng);
+			function addLatLng(event)
+			{
+				var path = poly.getPath(); // query path
+				path.push(event.latLng); // append new position
+				var marker = new google.maps.Marker( // add new marker
+				{
+					position: event.latLng,
+					map: map
+				});
+			}
+
+13. Google Maps API – Creating a MultiPolygon
+
+			var map = new google.maps.Map(document.getElementById('map'),
+			{
+				center: {lat: 47.5, lng: 16.5},
+				zoom: 9
+			});
+			var path1 = // first polygon in CCW order
+			[
+					{lat: 47, lng: 16 },		{lat: 47, lng: 17 },
+					{lat: 48, lng: 17 },		{lat: 48, lng: 16 }
+			];
+			var path2 = // second polygon in CW order
+			[
+				{lat: 47.8, lng: 16.2 },		{lat: 47.8, lng: 16.8 },
+				{lat: 47.2, lng: 16.8 },		{lat: 47.2, lng: 16.2 }
+			];
+
+			var polygon = new google.maps.Polygon(
+			{
+				paths: [ path1, path2 ],
+				strokeColor: '#408000',		strokeOpacity: 1.0,	strokeWeight: 2,
+				fillColor: '#80FF00‘,	fillOpacity: 0.4
+			});
+
+
+14. Google Maps API – Editing a Polygon
+
+			var map = new google.maps.Map(document.getElementById('map'),
+			{
+				center: {lat: 47.5, lng: 16.5},
+				zoom: 9
+			});
+			var path = // first polygon in CCW order
+			[
+					{lat: 47, lng: 16 },		{lat: 47, lng: 17 },
+					{lat: 48, lng: 17 },		{lat: 48, lng: 16 }
+			];
+
+			var polygon = new google.maps.Polygon(
+			{
+				paths: [ path1, path2 ],
+				strokeColor: '#408000',	
+				strokeOpacity: 1.0,
+				strokeWeight: 2,
+				fillColor: '#80FF00‘,
+				fillOpacity: 0.4,
+				draggable: true,
+				editable: true, 
+			});
+
+15. Google Maps API – Ground Overlay
+
+			var map = new google.maps.Map(document.getElementById('map'),
+			{
+				center: {lat: 40.74, lng: -74.18},
+				zoom: 13
+			});
+
+			var imageBounds = new google.maps.LatLngBounds(
+				new google.maps.LatLng(40.712216, -74.22655),
+				new google.maps.LatLng(40.773941, -74.12544));
+
+			historicalOverlay = new google.maps.GroundOverlay(
+				'https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg',
+				imageBounds);
+
+			historicalOverlay.setMap(map);
+
+			historicalOverlay.setOpacity(0.7);
+			
