@@ -9,3 +9,7 @@ html-partials-compiler web/u2/7_markers.html > ../web/u2/7_markers.html
 html-partials-compiler web/u2/8_infowindow.html > ../web/u2/8_infowindow.html
 html-partials-compiler web/u2/9_polyline.html > ../web/u2/9_polyline.html
 html-partials-compiler web/u2/11_dashedpolyline.html > ../web/u2/11_dashedpolyline.html
+html-partials-compiler web/u2/12_drawingpolyline.html > ../web/u2/12_drawingpolyline.html
+html-partials-compiler web/u2/13_MultiPolygon.html > ../web/u2/13_MultiPolygon.html
+html-partials-compiler web/u2/14_EditingPolygon.html > ../web/u2/14_EditingPolygon.html
+html-partials-compiler web/u2/15_GroundOverlay.html > ../web/u2/15_GroundOverlay.html

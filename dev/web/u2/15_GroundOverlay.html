@@ -1,14 +1,13 @@
-
-<!DOCTYPE html>
-<html>
-	<head>
+<!partial src="../../partials/header.html">
 		<style type="text/css">
 			html, body { height: 100%; margin: 0; padding: 0; }
 			#map { height: 100%; }
 		</style>
-	</head>
-	<body>
-		<div id="map"></div>
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Syncronous Simple map</h1>
+</header>
+<div id="map" class="w3-row-padding w3-padding-64 w3-container"></div>
 		<script src="https://maps.googleapis.com/maps/api/js?v=3"></script>
 		<script type="text/javascript">
 		var map = new google.maps.Map(document.getElementById('map'),
@@ -30,5 +29,4 @@
 			historicalOverlay.setOpacity(0.7);
 			
 		</script>
-	</body>
-</html>			
+<!partial src="../../partials/footer.html">
