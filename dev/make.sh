@@ -3,7 +3,6 @@ mkdir -p ../web
 mkdir -p ../web/u2
 mkdir -p ../web/u3
 mkdir -p ../web/u4
-mkdir -p ../web/u5
 
 # Copy static resources
 cp -r css ../

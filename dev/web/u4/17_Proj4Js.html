@@ -13,7 +13,7 @@
 		$("#convert").on("click", function(){
 			var p = new proj4.Point($("#lng").val(), $("#lat").val() );
 			proj4.transform(burimi, destinimi, p);
-			$("#result").text("X : " +p.x + " \nY : " + p.y)
+			$("#result").text("X : " +p.x + " \nY : " + p.y);
 		});
 });
 </script>

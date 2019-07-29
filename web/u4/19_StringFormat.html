@@ -79,7 +79,7 @@
 		//Proj4JS e inkorporuar tek OpenLayers
 			var p = new proj4.Point($("#lng").val(), $("#lat").val() );
 			proj4.transform(burimi, destinimi, p);
-			alert("X : " +p.x + " \nY : " + p.y);
+			$("#result").text("X : " +p.x + " \nY : " + p.y);
 		});
 });
 
@@ -88,6 +88,9 @@
 	Gjatësia : <input type="number" id="lng" />
 	Gjerësia : <input type="number" id="lat" />
 	<button id="convert">Transformo</button>
+</div>
+<div class="w3-row-padding w3-padding-64 w3-container">
+	<span id="result"></span>
 </div>
 
 <script src="/js/menutoogle.js"></script>
