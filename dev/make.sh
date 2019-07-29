@@ -9,6 +9,12 @@ mkdir -p ../web/u5
 cp -r css ../
 cp -r js ../
 
+# Copy some other resources (u3, u4)
+cp -r web/u3/data ../web/u3
+cp -r web/u3/img ../web/u3
+cp -r web/u3/js ../web/u3
+cp -r web/u4/js ../web/u4
+
 # Create static html Files
 html-partials-compiler index.html > ../index.html
 html-partials-compiler web/u2/1_simplemap.html > ../web/u2/1_simplemap.html

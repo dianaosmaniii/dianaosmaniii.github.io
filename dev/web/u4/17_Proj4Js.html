@@ -13,7 +13,7 @@
 		$("#convert").on("click", function(){
 			var p = new proj4.Point($("#lng").val(), $("#lat").val() );
 			proj4.transform(burimi, destinimi, p);
-			alert("X : " +p.x + " \nY : " + p.y);
+			$("#result").text("X : " +p.x + " \nY : " + p.y)
 		});
 });
 </script>
@@ -21,5 +21,8 @@
   Gjatësia : <input type="number" id="lng" />
 	Gjerësia : <input type="number" id="lat" />
 	<button id="convert">Transformo</button>
+</div>
+<div class="w3-row-padding w3-padding-64 w3-container">
+	<span id="result"></span>
 </div>
 <!partial src="../../partials/footer.html">
