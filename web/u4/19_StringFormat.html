@@ -62,45 +62,36 @@
   </div>
 </div>
 
+	<script  type="text/javascript" src="js/jquery-2.1.0.js"></script>
+	<!-- <script type="text/javascript" src="js/Epsg7392.js"></script> -->
+	<script type="text/javascript" src="js/proj4.js"></script>
+  <script type="text/javascript">
 
-		<style type="text/css">
-			html, body { height: 100%; margin: 0; padding: 0; }
-			#map { height: 100%; }
-		</style>
+    $(window).load(function(){
 
-<!-- Header -->
-<header class="w3-container w3-red w3-center" style="padding:128px 16px">
-  <h1 class="w3-margin w3-jumbo">Dashed polyline</h1>
-</header>
-<div id="map" class="w3-row-padding w3-padding-64 w3-container"></div>
-		<script src="https://maps.googleapis.com/maps/api/js?v=3"></script>
-		<script type="text/javascript">
+   //Kosovaref //te dhenat te KosovaRef
+	var kosovaref01 = "+proj=tmerc +lat_0=0 +lon_0=21 +k=0.9999 +x_0=7500000 +y_0=0 +ellps=GRS80 +units=m +no_defs"; 
+	
+	var burimi = new proj4.Proj('EPSG:4326');    //Koordinitar në sistemin burim duhet të jenë në  WGS84
+	var destinimi = new proj4.Proj(kosovaref01);
+		$("#convert").on("click", function(){
+		//e kthejm ne librarine e funkionit destim pra KosovaRef
+		//Proj4JS e inkorporuar tek OpenLayers
+			var p = new proj4.Point($("#lng").val(), $("#lat").val() );
+			proj4.transform(burimi, destinimi, p);
+			alert("X : " +p.x + " \nY : " + p.y);
+		});
+});
 
-			var map = new google.maps.Map(document.getElementById('map'),
-			{
-				center: {lat: 47.5, lng: 16.5}, zoom: 9,
-			});
+</script>
+<div class="w3-row-padding w3-padding-64 w3-container">
+	Gjatësia : <input type="number" id="lng" />
+	Gjerësia : <input type="number" id="lat" />
+	<button id="convert">Transformo</button>
+</div>
 
-			var path =
-			[
-				{lat: 47, lng: 16}, {lat: 47, lng: 17}, {lat: 48, lng: 16}, {lat: 48, lng: 17}
-			];
-
-			var lineSymbol =
-			{
-				path: 'M 0,-1 0,1', strokeOpacity: 1, scale: 4
-			};
-
-			poly = new google.maps.Polyline(
-			{
-				path: path,
-				strokeColor: '#004060',  strokeOpacity: 0.2,  strokeWeight: 3,
-				icons: [{ icon: lineSymbol, offset: '0', repeat: '20px' }],
-				map: map
-			});
-			
-		</script>
 <script src="/js/menutoogle.js"></script>
 
 </body>
 </html>
+

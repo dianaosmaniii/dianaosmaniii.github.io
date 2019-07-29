@@ -63,43 +63,28 @@
 </div>
 
 
-		<style type="text/css">
-			html, body { height: 100%; margin: 0; padding: 0; }
-			#map { height: 100%; }
-		</style>
-
-<!-- Header -->
-<header class="w3-container w3-red w3-center" style="padding:128px 16px">
-  <h1 class="w3-margin w3-jumbo">Dashed polyline</h1>
-</header>
-<div id="map" class="w3-row-padding w3-padding-64 w3-container"></div>
-		<script src="https://maps.googleapis.com/maps/api/js?v=3"></script>
-		<script type="text/javascript">
-
-			var map = new google.maps.Map(document.getElementById('map'),
-			{
-				center: {lat: 47.5, lng: 16.5}, zoom: 9,
-			});
-
-			var path =
-			[
-				{lat: 47, lng: 16}, {lat: 47, lng: 17}, {lat: 48, lng: 16}, {lat: 48, lng: 17}
-			];
-
-			var lineSymbol =
-			{
-				path: 'M 0,-1 0,1', strokeOpacity: 1, scale: 4
-			};
-
-			poly = new google.maps.Polyline(
-			{
-				path: path,
-				strokeColor: '#004060',  strokeOpacity: 0.2,  strokeWeight: 3,
-				icons: [{ icon: lineSymbol, offset: '0', repeat: '20px' }],
-				map: map
-			});
-			
-		</script>
+	<script  type="text/javascript" src="js/jquery-2.1.0.js"></script> 
+	<script type="text/javascript" src="js/proj4.js"></script> 
+  <script type="text/javascript">
+    $(window).load(function(){
+	   //EPSG:3857 WGS 84 / Pseudo-Mercator -- Spherical Mercator, Google Maps, OpenStreetMap, Bing, ArcGIS, ESRI
+   //vec per transformim jquery
+   //krijojme interface me dy parametria gjatesi dhe gjeresi
+   //EPSG Dataset i te dhenave duke permbajtur shenime mbi projeksione te ndryshme, KosovaREF nuk eshte pjese
+	var burimi = new proj4.Proj('EPSG:4326');    //Koordinitar në sistemin burim duhet të jenë në  WGS84
+	var destinimi = new proj4.Proj('EPSG:3857'); 
+		$("#convert").on("click", function(){
+			var p = new proj4.Point($("#lng").val(), $("#lat").val() );
+			proj4.transform(burimi, destinimi, p);
+			alert("X : " +p.x + " \nY : " + p.y);
+		});
+});
+</script>
+<div class="w3-row-padding w3-padding-64 w3-container">
+  Gjatësia : <input type="number" id="lng" />
+	Gjerësia : <input type="number" id="lat" />
+	<button id="convert">Transformo</button>
+</div>
 <script src="/js/menutoogle.js"></script>
 
 </body>

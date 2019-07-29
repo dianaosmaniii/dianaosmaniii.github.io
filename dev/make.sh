@@ -1,3 +1,15 @@
+# Create folder structure
+mkdir -p ../web
+mkdir -p ../web/u2
+mkdir -p ../web/u3
+mkdir -p ../web/u4
+mkdir -p ../web/u5
+
+# Copy static resources
+cp -r css ../
+cp -r js ../
+
+# Create static html Files
 html-partials-compiler index.html > ../index.html
 html-partials-compiler web/u2/1_simplemap.html > ../web/u2/1_simplemap.html
 html-partials-compiler web/u2/2_syncsimplemap.html > ../web/u2/2_syncsimplemap.html
@@ -15,3 +27,6 @@ html-partials-compiler web/u2/14_EditingPolygon.html > ../web/u2/14_EditingPolyg
 html-partials-compiler web/u2/15_GroundOverlay.html > ../web/u2/15_GroundOverlay.html
 html-partials-compiler web/u3/15_GeoJSON.html > ../web/u3/15_GeoJSON.html
 html-partials-compiler web/u3/16_GeoJSON.html > ../web/u3/16_GeoJSON.html
+html-partials-compiler web/u4/17_Proj4Js.html > ../web/u4/17_Proj4Js.html
+html-partials-compiler web/u4/18_Proj4JsTransformim.html > ../web/u4/18_Proj4JsTransformim.html
+html-partials-compiler web/u4/19_StringFormat.html > ../web/u4/19_StringFormat.html
