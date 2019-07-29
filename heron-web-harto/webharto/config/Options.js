@@ -7,7 +7,7 @@ OpenLayers.Util.onImageLoadErrorColor = "transparent";
 OpenLayers.ProxyHost = "";
 OpenLayers.DOTS_PER_INCH = 25.4 / 0.28;
 
-Ext.BLANK_IMAGE_URL = '../../lib/ext-3.4.1/resources/images/default/s.gif';
+Ext.BLANK_IMAGE_URL = '/heron-web-harto/lib/ext-3.4.1/resources/images/default/s.gif';
 
 /**
  * Options for MapPanel
