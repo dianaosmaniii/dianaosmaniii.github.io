@@ -13,3 +13,5 @@ html-partials-compiler web/u2/12_drawingpolyline.html > ../web/u2/12_drawingpoly
 html-partials-compiler web/u2/13_MultiPolygon.html > ../web/u2/13_MultiPolygon.html
 html-partials-compiler web/u2/14_EditingPolygon.html > ../web/u2/14_EditingPolygon.html
 html-partials-compiler web/u2/15_GroundOverlay.html > ../web/u2/15_GroundOverlay.html
+html-partials-compiler web/u3/15_GeoJSON.html > ../web/u3/15_GeoJSON.html
+html-partials-compiler web/u3/16_GeoJSON.html > ../web/u3/16_GeoJSON.html
