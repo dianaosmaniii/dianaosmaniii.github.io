@@ -12,6 +12,10 @@ p {
   font-size: 20px;
 }
 
+header>.w3-container {
+  padding: 64px 16px 50px 16px;
+}
+
 /* Override w3-red */
 .w3-red {
   color:#fff!important;
