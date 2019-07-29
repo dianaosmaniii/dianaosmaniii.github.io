@@ -62,7 +62,7 @@ Heron.options.map.settings = {
 
 //GIS Server te cilat ofrojne sherbimet e hartes
 Heron.scratch.urls = {
-    GEO: 'http://localhost:8080',
+	GEO: 'http://ec2-34-241-243-4.eu-west-1.compute.amazonaws.com:8080',
     AKK: 'http://geoportal.rks-gov.net'
 };
 
