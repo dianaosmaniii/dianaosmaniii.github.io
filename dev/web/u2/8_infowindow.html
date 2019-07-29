@@ -1,33 +1,16 @@
+<!partial src="../../partials/header.html">
 
-    <!-- <script>
-			var marker = new google.maps.Marker(
-			{
-				position: {lat: 47.4, lng: 16.3},
-				title: "Open InfoWindow"
-				map: map
-			});
-
-			var infowindow = new google.maps.InfoWindow(
-			{
-				content: "<h1>Title</h1><p>Paragraph <b>bold text</b> normal text</p>"
-				// position: latLng, maxWidth: 200
-			});
-		
-			marker.addListener('click', function()
-			{
-				infowindow.open(map, marker);
-			});
-</script>
-<!DOCTYPE html> -->
-<html>
-	<head>
 		<style type="text/css">
 			html, body { height: 100%; margin: 0; padding: 0; }
 			#map { height: 100%; }
 		</style>
-	</head>
-	<body>
-		<div id="map"></div>
+
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Syncronous Simple map</h1>
+</header>
+<div id="map" class="w3-row-padding w3-padding-64 w3-container"></div>
+
 		<script src="js/gmjs.js?v=3"></script>
 		<script type="text/javascript">
 			var map = new google.maps.Map(document.getElementById('map'),
@@ -54,7 +37,5 @@
 				infowindow.open(map, marker);
 			});
 		</script>
-	</body>
-</html>
 
-
+<!partial src="../../partials/footer.html">
