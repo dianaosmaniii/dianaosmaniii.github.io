@@ -12,7 +12,7 @@ p {
   font-size: 20px;
 }
 
-header>.w3-container {
+header.w3-container {
   padding: 64px 16px 50px 16px;
 }
 
