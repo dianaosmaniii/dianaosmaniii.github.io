@@ -11,3 +11,9 @@ p {
   font-family: verdana;
   font-size: 20px;
 }
+
+/* Override w3-red */
+.w3-red {
+  color:#fff!important;
+  background-color:#494747!important
+}
