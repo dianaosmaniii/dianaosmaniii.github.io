@@ -271,7 +271,7 @@ Heron.options.layertree.tree = [
 	{
         text: 'Geoserver', expanded: true, children: [
         {nodeType: "gx_layer", layer: "test-Multipolygon", text: "test-Multipolygon" },
-        {nodeType: "gx_layer", layer: "test-lines", text: "test-lines" }
+        {nodeType: "gx_layer", layer: "webharto-points", text: "webharto-points" }
     ]
     },
     {
