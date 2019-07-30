@@ -62,7 +62,7 @@ Heron.options.map.settings = {
 
 //GIS Server te cilat ofrojne sherbimet e hartes
 Heron.scratch.urls = {
-	GEO: 'http://ec2-34-241-243-4.eu-west-1.compute.amazonaws.com:8080',
+    GEO: 'http://ec2-34-241-243-4.eu-west-1.compute.amazonaws.com:8080',
     AKK: 'http://geoportal.rks-gov.net'
 };
 
@@ -178,9 +178,9 @@ Heron.options.map.layers = [
      * Geoserver: Test lines
      */
 	new OpenLayers.Layer.WMS(
-            "test-lines",
+            "webharto-points",
             Heron.GISWS.urls.GEOSERVER,
-            {layers: "test:lines", format: "image/png", transparent: true},
+            {layers: "webharto:points", format: "image/png", transparent: true},
             {isBaseLayer: false, singleTile: true, visibility: false, alpha: true,
                 featureInfoFormat: "application/vnd.ogc.gml", transitionEffect: 'resize',
                 metadata: {
