@@ -7,10 +7,36 @@
 
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
-  <select>
-    <option value="aws">amazone.com</option>
-    <option value="localhost">localhost:8080</option>
-  </select>
+  <div>
+      Zgjidhni adresën e geoserverit
+      <select>
+          <option value="aws">amazone.com</option>
+          <option value="localhost">localhost:8080</option>
+      </select>
+      <button id="connect">Lidhu</button>
+  </div>
 </div>
+
+<script>
+  var btn = document.querySelector('#connect');
+  var selection = document.querySelector('select');
+  btn.addEventListener('click', function() {
+    switch(selection.value) {
+      case 'aws':
+      openInNewTab('http://google.com');
+        break;
+      case 'localhost':
+        openInNewTab('http://localhost:8080');
+        break;
+      default:
+        // do nothing
+    }
+  })
+
+  function openInNewTab(url) {
+    var win = window.open(url, '_blank');
+    win.focus();
+  }
+</script>
 
 <!partial src="./partials/footer.html">
