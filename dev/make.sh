@@ -17,6 +17,9 @@ cp -r web/u4/js ../web/u4
 
 # Create static html Files
 html-partials-compiler index.html > ../index.html
+html-partials-compiler web/u2.html > ../web/u2.html
+html-partials-compiler web/u3.html > ../web/u3.html
+html-partials-compiler web/u4.html > ../web/u4.html
 html-partials-compiler web/u2/1_simplemap.html > ../web/u2/1_simplemap.html
 html-partials-compiler web/u2/2_syncsimplemap.html > ../web/u2/2_syncsimplemap.html
 html-partials-compiler web/u2/3_controls.html > ../web/u2/3_controls.html
