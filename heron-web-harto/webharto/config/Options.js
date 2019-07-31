@@ -70,7 +70,7 @@ Heron.scratch.urls = {
 //GISWS Hapesirat punuese ne GIS Server
 Heron.GISWS.urls = {
     GEOSERVER: Heron.scratch.urls.GEO + '/geoserver/wms?',
-    GEOSERVER: Heron.scratch.urls.GEOBACKUP + '/geoserver/wms?',
+    GEOSERVER_LOCAL: Heron.scratch.urls.GEOBACKUP + '/geoserver/wms?',
     AKKWMTS: Heron.scratch.urls.AKK + '/wmts?',
     AKKWMS: Heron.scratch.urls.AKK + '/wms?'
 };
@@ -243,6 +243,25 @@ Heron.options.map.layers = [
                 }
             }
     ),
+
+	new OpenLayers.Layer.WMS(
+        "local-webharto-buildings",
+        Heron.GISWS.urls.GEOSERVER_LOCAL,
+        {layers: "webharto:gis_osm_buildings_a_free_1", format: "image/png", transparent: true},
+        {isBaseLayer: false, singleTile: true, visibility: false, alpha: true,
+            featureInfoFormat: "application/vnd.ogc.gml", transitionEffect: 'resize',
+            metadata: {
+                wfs: {
+                    protocol: 'fromWMSLayer',
+                    featurePrefix: 'test',
+                    featureNS: 'http://ushtrime.com',
+                    downloadFormats: Heron.options.wfs.downloadFormats,
+                    maxQueryArea: 100000,
+                    maxQueryLength: 1000
+                }
+            }
+        }
+    ),
 	
 	Heron.options.worklayers.editor,
     Heron.options.worklayers.scratch
@@ -277,7 +296,7 @@ Heron.options.layertree.tree = [
     },
     {
         text: 'Geoserver (localhost)', expanded: false, children: [
-            {nodeType: "gx_layer", layer: "test-Multipolygon", text: "test-Multipolygon" },
+            {nodeType: "gx_layer", layer: "local-webharto-buildings", text: "Objektet" },
             {nodeType: "gx_layer", layer: "webharto-points", text: "webharto-points" }
         ]
     },
