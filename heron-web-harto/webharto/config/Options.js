@@ -63,12 +63,14 @@ Heron.options.map.settings = {
 //GIS Server te cilat ofrojne sherbimet e hartes
 Heron.scratch.urls = {
     GEO: 'http://ec2-3-19-26-45.us-east-2.compute.amazonaws.com:8080',
+    GEOBACKUP: 'http://localhost:8080',
     AKK: 'http://geoportal.rks-gov.net'
 };
 
 //GISWS Hapesirat punuese ne GIS Server
 Heron.GISWS.urls = {
     GEOSERVER: Heron.scratch.urls.GEO + '/geoserver/wms?',
+    GEOSERVER: Heron.scratch.urls.GEOBACKUP + '/geoserver/wms?',
     AKKWMTS: Heron.scratch.urls.AKK + '/wmts?',
     AKKWMS: Heron.scratch.urls.AKK + '/wms?'
 };
@@ -256,32 +258,37 @@ Ext.namespace("Heron.options.layertree");
 Heron.options.layertree.tree = [
     {
         text: 'Shtresat baze', expanded: true, children: [
-        {nodeType: "gx_layer", layer: "Orthophoto_2012", text: "Orthophoto_2012" },
-        {nodeType: "gx_layer", layer: "Hartat Topografike2015", text: "Hartat Topografike2015" },
-        // {nodeType: "gx_layer", layer: "OpenStreetMap", text: "OpenStreetMap"},
-        {nodeType: "gx_layer", layer: "zbrazet"}
-    ]
+            {nodeType: "gx_layer", layer: "Orthophoto_2012", text: "Orthophoto_2012" },
+            {nodeType: "gx_layer", layer: "Hartat Topografike2015", text: "Hartat Topografike2015" },
+            {nodeType: "gx_layer", layer: "zbrazet"}
+        ]
     },
     {
-        text: 'Vector', expanded: true, children: [
-        {nodeType: "gx_layer", layer: "Editor", text: "Editor" },
-        {nodeType: "gx_layer", layer: "Scratch", text: "Scratch" }
-    ]
+        text: 'Vector', expanded: false, children: [
+            {nodeType: "gx_layer", layer: "Editor", text: "Editor" },
+            {nodeType: "gx_layer", layer: "Scratch", text: "Scratch" }
+        ]
     },    
 	{
-        text: 'Geoserver', expanded: true, children: [
-        {nodeType: "gx_layer", layer: "test-Multipolygon", text: "test-Multipolygon" },
-        {nodeType: "gx_layer", layer: "webharto-points", text: "webharto-points" }
-    ]
+        text: 'Geoserver (AWS)', expanded: true, children: [
+            {nodeType: "gx_layer", layer: "test-Multipolygon", text: "test-Multipolygon" },
+            {nodeType: "gx_layer", layer: "webharto-points", text: "webharto-points" }
+        ]
+    },
+    {
+        text: 'Geoserver (localhost)', expanded: false, children: [
+            {nodeType: "gx_layer", layer: "test-Multipolygon", text: "test-Multipolygon" },
+            {nodeType: "gx_layer", layer: "webharto-points", text: "webharto-points" }
+        ]
     },
     {
         text: 'Pikat1', expanded: false, children: [
-        {
-            text: 'Pikat2', expanded: false, children: [
-            {nodeType: "gx_layer", layer: "test-points", text: "Pikat e interesit" }
+            {
+                text: 'Pikat2', expanded: false, children: [
+                    {nodeType: "gx_layer", layer: "test-points", text: "Pikat e interesit" }
+                ]
+            }
         ]
-        }
-    ]
     }
 ];
 
