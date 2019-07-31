@@ -70,7 +70,7 @@
   <div>
       Zgjidhni adresën e geoserverit
       <select>
-          <option value="aws">amazone.com</option>
+          <option value="aws">ec2-3-19-26-45.us-east-2.compute.amazonaws.com:8080</option>
           <option value="localhost">localhost:8080</option>
       </select>
       <button id="connect">Lidhu</button>
@@ -83,7 +83,7 @@
   btn.addEventListener('click', function() {
     switch(selection.value) {
       case 'aws':
-      openInNewTab('http://google.com');
+      openInNewTab('http://ec2-3-19-26-45.us-east-2.compute.amazonaws.com:8080');
         break;
       case 'localhost':
         openInNewTab('http://localhost:8080');
