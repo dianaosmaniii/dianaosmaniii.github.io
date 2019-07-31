@@ -7,6 +7,7 @@ mkdir -p ../web/u4
 # Copy static resources
 cp -r css ../
 cp -r js ../
+cp -r doc ../
 
 # Copy some other resources (u3, u4)
 cp -r web/u3/data ../web/u3
