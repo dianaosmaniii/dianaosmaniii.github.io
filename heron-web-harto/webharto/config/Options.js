@@ -122,26 +122,34 @@ Heron.options.map.layers = [
      */
 
     new OpenLayers.Layer.WMS(
-            "Orthophoto_2012",
-            Heron.GISWS.urls.AKKWMTS,
-            {layers: "Orthophoto_2012", format: "image/png", transparent: true},
-            {isBaseLayer: true, singleTile: false, visibility: true, alpha: true,
-                attribution: "copyright AKK 2012: <a href='http://geoportal.rks-gov.net'>Orthophoto_2012</a>",
-                transitionEffect: 'resize'
-            }
-    ),    
-	
-	new OpenLayers.Layer.WMS(
-            "Hartat Topografike2015",
-            Heron.GISWS.urls.AKKWMS,
-            {layers: "Hartat_Topografike2015", format: "image/jpeg", transparent: false},
-            {isBaseLayer: true, singleTile: true, visibility: false, alpha: true,
-                attribution: "copyright AKK 2012: <a href='http://geoportal.rks-gov.net'>Hartat_Topografike2015</a>",
-                transitionEffect: 'resize'
-            }
+        "Orthophoto_2012",
+        Heron.GISWS.urls.AKKWMTS,
+        {layers: "Orthophoto_2012", format: "image/png", transparent: true},
+        {isBaseLayer: true, singleTile: false, visibility: false, alpha: true,
+            attribution: "copyright AKK 2012: <a target='_blank' href='http://geoportal.rks-gov.net'>Orthophoto 2012</a>",
+            transitionEffect: 'resize'
+        }
     ),
 
-	// new OpenLayers.Layer.OSM(),
+    new OpenLayers.Layer.WMS(
+        "Orthophoto2018Urban",
+        Heron.GISWS.urls.AKKWMTS,
+        {layers: "Orthophoto2018Urban", format: "image/png", transparent: true},
+        {isBaseLayer: true, singleTile: false, visibility: true, alpha: true,
+            attribution: "copyright AKK 2018: <a target='_blank' href='http://geoportal.rks-gov.net'>Orthophoto 2018 Urban</a>",
+            transitionEffect: 'resize'
+        }
+    ),
+
+    new OpenLayers.Layer.WMS(
+        "Orthophoto2018Rural",
+        Heron.GISWS.urls.AKKWMTS,
+        {layers: "Orthophoto2018Rural", format: "image/png", transparent: true},
+        {isBaseLayer: true, singleTile: false, visibility: true, alpha: true,
+            attribution: "copyright AKK 2018: <a target='_blank' href='http://geoportal.rks-gov.net'>Orthophoto 2018 Rural</a>",
+            transitionEffect: 'resize'
+        }
+    ),
 
     new OpenLayers.Layer.Image(
             "zbrazet",
@@ -151,7 +159,7 @@ Heron.options.map.layers = [
             {resolutions: Heron.options.map.settings.resolutions, isBaseLayer: true, visibility: false, displayInLayerSwitcher: true, transitionEffect: 'resize'}
     ),
 
-/** OVERLAYS **/
+    /** OVERLAYS **/
 
 
     /*
@@ -224,30 +232,11 @@ Heron.options.map.layers = [
 	 /*
      * Geoserver: Test pikat
      */
-	
-	new OpenLayers.Layer.WMS(
-            "Hartat Topografike2015",
-            Heron.GISWS.urls.GEOSERVER,
-            {layers: "Hartat_Topografike2015", format: "image/png", transparent: true},
-            {isBaseLayer: false, singleTile: true, visibility: false, alpha: true,
-                featureInfoFormat: "application/vnd.ogc.gml", transitionEffect: 'resize',
-                metadata: {
-                    wfs: {
-                        protocol: 'fromWMSLayer',
-                        featurePrefix: 'test',
-                        featureNS: 'http://ushtrime.com',
-                        downloadFormats: Heron.options.wfs.downloadFormats,
-                        maxQueryArea: 100000,
-                        maxQueryLength: 1000
-                    }
-                }
-            }
-    ),
 
 	new OpenLayers.Layer.WMS(
-        "local-webharto-buildings",
+        "local-webharto-objektet",
         Heron.GISWS.urls.GEOSERVER_LOCAL,
-        {layers: "webharto:gis_osm_buildings_a_free_1", format: "image/png", transparent: true},
+        {layers: "webharto:objektet", format: "image/png", transparent: true},
         {isBaseLayer: false, singleTile: true, visibility: false, alpha: true,
             featureInfoFormat: "application/vnd.ogc.gml", transitionEffect: 'resize',
             metadata: {
@@ -277,8 +266,9 @@ Ext.namespace("Heron.options.layertree");
 Heron.options.layertree.tree = [
     {
         text: 'Shtresat baze', expanded: true, children: [
-            {nodeType: "gx_layer", layer: "Orthophoto_2012", text: "Orthophoto_2012" },
-            {nodeType: "gx_layer", layer: "Hartat Topografike2015", text: "Hartat Topografike2015" },
+            {nodeType: "gx_layer", layer: "Orthophoto_2012", text: "Orthophoto 2012" },
+            {nodeType: "gx_layer", layer: "Orthophoto2018Urban", text: "Orthophoto 2018 Urban" },
+            {nodeType: "gx_layer", layer: "Orthophoto2018Rural", text: "Orthophoto 2018 Rural" },
             {nodeType: "gx_layer", layer: "zbrazet"}
         ]
     },
@@ -296,7 +286,7 @@ Heron.options.layertree.tree = [
     },
     {
         text: 'Geoserver (localhost)', expanded: false, children: [
-            {nodeType: "gx_layer", layer: "local-webharto-buildings", text: "Objektet" },
+            {nodeType: "gx_layer", layer: "local-webharto-objektet", text: "Objektet" },
             {nodeType: "gx_layer", layer: "webharto-points", text: "webharto-points" }
         ]
     },
