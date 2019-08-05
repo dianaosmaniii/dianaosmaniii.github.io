@@ -1,3 +1,6 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+
 # Create folder structure
 mkdir -p ../web
 mkdir -p ../web/u2
