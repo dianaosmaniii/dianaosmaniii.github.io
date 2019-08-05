@@ -160,74 +160,8 @@ Heron.options.map.layers = [
     ),
 
     /** OVERLAYS **/
-
-
-    /*
-     * Geoserver: Test polygons
-     */
-    new OpenLayers.Layer.WMS(
-            "test-Multipolygon",
-            Heron.GISWS.urls.GEOSERVER,
-            {layers: "test:Multipolygon", format: "image/png", transparent: true},
-            {isBaseLayer: false, singleTile: true, visibility: false, alpha: true,
-                featureInfoFormat: "application/vnd.ogc.gml", transitionEffect: 'resize',
-                metadata: {
-                    wfs: {
-                        protocol: 'fromWMSLayer',
-                        featurePrefix: 'test',
-                        featureNS: 'http://ushtrime.com',
-                        downloadFormats: Heron.options.wfs.downloadFormats,
-                        maxQueryArea: 100000,
-                        maxQueryLength: 1000
-                    }
-                }
-            }
-    ),    
 	
-	/*
-     * Geoserver: Test lines
-     */
-	new OpenLayers.Layer.WMS(
-            "webharto-points",
-            Heron.GISWS.urls.GEOSERVER,
-            {layers: "webharto:points", format: "image/png", transparent: true},
-            {isBaseLayer: false, singleTile: true, visibility: false, alpha: true,
-                featureInfoFormat: "application/vnd.ogc.gml", transitionEffect: 'resize',
-                metadata: {
-                    wfs: {
-                        protocol: 'fromWMSLayer',
-                        featurePrefix: 'test',
-                        featureNS: 'http://ushtrime.com',
-                        downloadFormats: Heron.options.wfs.downloadFormats,
-                        maxQueryArea: 100000,
-                        maxQueryLength: 1000
-                    }
-                }
-            }
-    ),	
 	
-	 /*
-     * Geoserver: Test pikat
-     */
-	
-	new OpenLayers.Layer.WMS(
-            "test-points",
-            Heron.GISWS.urls.GEOSERVER,
-            {layers: "test:points", format: "image/png", transparent: true},
-            {isBaseLayer: false, singleTile: true, visibility: false, alpha: true,
-                featureInfoFormat: "application/vnd.ogc.gml", transitionEffect: 'resize',
-                metadata: {
-                    wfs: {
-                        protocol: 'fromWMSLayer',
-                        featurePrefix: 'test',
-                        featureNS: 'http://ushtrime.com',
-                        downloadFormats: Heron.options.wfs.downloadFormats,
-                        maxQueryArea: 100000,
-                        maxQueryLength: 1000
-                    }
-                }
-            }
-    ),	
 	
 	 /*
      * Geoserver: LOCAL
@@ -291,9 +225,28 @@ Heron.options.map.layers = [
     ),
 
 	new OpenLayers.Layer.WMS(
-        "local-webharto-fshatrat",
+        "local-webharto-bari",
         Heron.GISWS.urls.GEOSERVER_LOCAL,
-        {layers: "webharto:fshatrat", format: "image/png", transparent: true},
+        {layers: "webharto:Bari", format: "image/png", transparent: true},
+        {isBaseLayer: false, singleTile: true, visibility: false, alpha: true,
+            featureInfoFormat: "application/vnd.ogc.gml", transitionEffect: 'resize',
+            metadata: {
+                wfs: {
+                    protocol: 'fromWMSLayer',
+                    featurePrefix: 'test',
+                    featureNS: 'http://ushtrime.com',
+                    downloadFormats: Heron.options.wfs.downloadFormats,
+                    maxQueryArea: 100000,
+                    maxQueryLength: 1000
+                }
+            }
+        }
+    ),
+
+	new OpenLayers.Layer.WMS(
+        "local-webharto-ferm",
+        Heron.GISWS.urls.GEOSERVER_LOCAL,
+        {layers: "webharto:Ferm", format: "image/png", transparent: true},
         {isBaseLayer: false, singleTile: true, visibility: false, alpha: true,
             featureInfoFormat: "application/vnd.ogc.gml", transitionEffect: 'resize',
             metadata: {
@@ -312,7 +265,102 @@ Heron.options.map.layers = [
 	new OpenLayers.Layer.WMS(
         "local-webharto-park",
         Heron.GISWS.urls.GEOSERVER_LOCAL,
-        {layers: "webharto:Park", format: "image/png", transparent: true},
+        {layers: "webharto:Parqet", format: "image/png", transparent: true},
+        {isBaseLayer: false, singleTile: true, visibility: false, alpha: true,
+            featureInfoFormat: "application/vnd.ogc.gml", transitionEffect: 'resize',
+            metadata: {
+                wfs: {
+                    protocol: 'fromWMSLayer',
+                    featurePrefix: 'test',
+                    featureNS: 'http://ushtrime.com',
+                    downloadFormats: Heron.options.wfs.downloadFormats,
+                    maxQueryArea: 100000,
+                    maxQueryLength: 1000
+                }
+            }
+        }
+    ),
+
+	new OpenLayers.Layer.WMS(
+        "local-webharto-pyll",
+        Heron.GISWS.urls.GEOSERVER_LOCAL,
+        {layers: "webharto:Pyll", format: "image/png", transparent: true},
+        {isBaseLayer: false, singleTile: true, visibility: false, alpha: true,
+            featureInfoFormat: "application/vnd.ogc.gml", transitionEffect: 'resize',
+            metadata: {
+                wfs: {
+                    protocol: 'fromWMSLayer',
+                    featurePrefix: 'test',
+                    featureNS: 'http://ushtrime.com',
+                    downloadFormats: Heron.options.wfs.downloadFormats,
+                    maxQueryArea: 100000,
+                    maxQueryLength: 1000
+                }
+            }
+        }
+    ),
+
+	new OpenLayers.Layer.WMS(
+        "local-webharto-rrugice",
+        Heron.GISWS.urls.GEOSERVER_LOCAL,
+        {layers: "webharto:Rrugice", format: "image/png", transparent: true},
+        {isBaseLayer: false, singleTile: true, visibility: false, alpha: true,
+            featureInfoFormat: "application/vnd.ogc.gml", transitionEffect: 'resize',
+            metadata: {
+                wfs: {
+                    protocol: 'fromWMSLayer',
+                    featurePrefix: 'test',
+                    featureNS: 'http://ushtrime.com',
+                    downloadFormats: Heron.options.wfs.downloadFormats,
+                    maxQueryArea: 100000,
+                    maxQueryLength: 1000
+                }
+            }
+        }
+    ),
+
+	new OpenLayers.Layer.WMS(
+        "local-webharto-varrezat",
+        Heron.GISWS.urls.GEOSERVER_LOCAL,
+        {layers: "webharto:Varrezat", format: "image/png", transparent: true},
+        {isBaseLayer: false, singleTile: true, visibility: false, alpha: true,
+            featureInfoFormat: "application/vnd.ogc.gml", transitionEffect: 'resize',
+            metadata: {
+                wfs: {
+                    protocol: 'fromWMSLayer',
+                    featurePrefix: 'test',
+                    featureNS: 'http://ushtrime.com',
+                    downloadFormats: Heron.options.wfs.downloadFormats,
+                    maxQueryArea: 100000,
+                    maxQueryLength: 1000
+                }
+            }
+        }
+    ),
+
+	new OpenLayers.Layer.WMS(
+        "local-webharto-industri",
+        Heron.GISWS.urls.GEOSERVER_LOCAL,
+        {layers: "webharto:Zonat_industriale", format: "image/png", transparent: true},
+        {isBaseLayer: false, singleTile: true, visibility: false, alpha: true,
+            featureInfoFormat: "application/vnd.ogc.gml", transitionEffect: 'resize',
+            metadata: {
+                wfs: {
+                    protocol: 'fromWMSLayer',
+                    featurePrefix: 'test',
+                    featureNS: 'http://ushtrime.com',
+                    downloadFormats: Heron.options.wfs.downloadFormats,
+                    maxQueryArea: 100000,
+                    maxQueryLength: 1000
+                }
+            }
+        }
+    ),
+
+	new OpenLayers.Layer.WMS(
+        "local-webharto-komercial",
+        Heron.GISWS.urls.GEOSERVER_LOCAL,
+        {layers: "webharto:Zonat_komerciale", format: "image/png", transparent: true},
         {isBaseLayer: false, singleTile: true, visibility: false, alpha: true,
             featureInfoFormat: "application/vnd.ogc.gml", transitionEffect: 'resize',
             metadata: {
@@ -347,15 +395,25 @@ Heron.options.layertree.tree = [
             {nodeType: "gx_layer", layer: "Orthophoto2018Rural", text: "Orthophoto 2018 Rural" },
             {nodeType: "gx_layer", layer: "zbrazet"}
         ]
-    },
-    {
-        text: 'Vector', expanded: false, children: [
-            {nodeType: "gx_layer", layer: "Editor", text: "Editor" },
-            {nodeType: "gx_layer", layer: "Scratch", text: "Scratch" }
-        ]
-    },    
+    },   
 	{
         text: 'Geoserver (AWS)', expanded: true, children: [
+            {
+                text: 'Prishtinë', expanded: true, children: [
+                    {nodeType: "gx_layer", layer: "aws-webharto-bari", text: "Bari"},
+                    {nodeType: "gx_layer", layer: "aws-webharto-ferm", text: "Fermët"},
+                    {nodeType: "gx_layer", layer: "aws-webharto-park", text: "Parqet"},
+                    {nodeType: "gx_layer", layer: "aws-webharto-pyll", text: "Pyjet"},
+                    {nodeType: "gx_layer", layer: "aws-webharto-rrugice", text: "Rrugicët"},
+                    {nodeType: "gx_layer", layer: "aws-webharto-varrezat", text: "Varrezat"},
+                    {nodeType: "gx_layer", layer: "aws-webharto-rruget", text: "Rrugët"},
+                    {nodeType: "gx_layer", layer: "aws-webharto-industri", text: "Zonat industriale"},
+                    {nodeType: "gx_layer", layer: "aws-webharto-komercial", text: "Zonat Komerciale"},
+                    {nodeType: "gx_layer", layer: "aws-webharto-transporti", text: "Transporti publik"},
+                    {nodeType: "gx_layer", layer: "aws-webharto-objektet", text: "Objektet"},
+                    {nodeType: "gx_layer", layer: "aws-webharto-rruget", text: "Rruget"}
+                ]
+            },
             {nodeType: "gx_layer", layer: "test-Multipolygon", text: "test-Multipolygon" },
             {nodeType: "gx_layer", layer: "webharto-points", text: "webharto-points" }
         ]
@@ -364,21 +422,18 @@ Heron.options.layertree.tree = [
         text: 'Geoserver (localhost)', expanded: false, children: [
             {
                 text: 'Prishtinë', expanded: false, children: [
-                    {nodeType: "gx_layer", layer: "local-webharto-objektet", text: "Objektet"},
-                    {nodeType: "gx_layer", layer: "local-webharto-rruget", text: "Rruget"},
+                    {nodeType: "gx_layer", layer: "local-webharto-bari", text: "Bari"},
+                    {nodeType: "gx_layer", layer: "local-webharto-ferm", text: "Fermët"},
+                    {nodeType: "gx_layer", layer: "local-webharto-park", text: "Parqet"},
+                    {nodeType: "gx_layer", layer: "local-webharto-pyll", text: "Pyjet"},
+                    {nodeType: "gx_layer", layer: "local-webharto-rrugice", text: "Rrugicët"},
+                    {nodeType: "gx_layer", layer: "local-webharto-varrezat", text: "Varrezat"},
+                    {nodeType: "gx_layer", layer: "local-webharto-rruget", text: "Rrugët"},
+                    {nodeType: "gx_layer", layer: "local-webharto-industri", text: "Zonat industriale"},
+                    {nodeType: "gx_layer", layer: "local-webharto-komercial", text: "Zonat Komerciale"},
                     {nodeType: "gx_layer", layer: "local-webharto-transporti", text: "Transporti publik"},
-                    {nodeType: "gx_layer", layer: "local-webharto-fshatrat", text: "Fshatrat"},
-                    {nodeType: "gx_layer", layer: "local-webharto-park", text: "Pemët"}
-                ]
-            },
-            {nodeType: "gx_layer", layer: "webharto-points", text: "webharto-points" }
-        ]
-    },
-    {
-        text: 'Pikat1', expanded: false, children: [
-            {
-                text: 'Pikat2', expanded: false, children: [
-                    {nodeType: "gx_layer", layer: "test-points", text: "Pikat e interesit" }
+                    {nodeType: "gx_layer", layer: "local-webharto-objektet", text: "Objektet"},
+                    {nodeType: "gx_layer", layer: "local-webharto-rruget", text: "Rruget"}
                 ]
             }
         ]
