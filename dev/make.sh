@@ -42,3 +42,6 @@ html-partials-compiler web/u4/19_StringFormat.html > ../web/u4/19_StringFormat.h
 html-partials-compiler architecture.html > ../architecture.html
 html-partials-compiler doc.html > ../doc.html
 html-partials-compiler gis.html > ../gis.html
+
+# Create readme.md
+cp ./doc/doc.md ../readme.md
