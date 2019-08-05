@@ -400,22 +400,20 @@ Heron.options.layertree.tree = [
         text: 'Geoserver (AWS)', expanded: true, children: [
             {
                 text: 'Prishtinë', expanded: true, children: [
-                    {nodeType: "gx_layer", layer: "aws-webharto-bari", text: "Bari"},
-                    {nodeType: "gx_layer", layer: "aws-webharto-ferm", text: "Fermët"},
-                    {nodeType: "gx_layer", layer: "aws-webharto-park", text: "Parqet"},
-                    {nodeType: "gx_layer", layer: "aws-webharto-pyll", text: "Pyjet"},
-                    {nodeType: "gx_layer", layer: "aws-webharto-rrugice", text: "Rrugicët"},
-                    {nodeType: "gx_layer", layer: "aws-webharto-varrezat", text: "Varrezat"},
-                    {nodeType: "gx_layer", layer: "aws-webharto-rruget", text: "Rrugët"},
-                    {nodeType: "gx_layer", layer: "aws-webharto-industri", text: "Zonat industriale"},
-                    {nodeType: "gx_layer", layer: "aws-webharto-komercial", text: "Zonat Komerciale"},
-                    {nodeType: "gx_layer", layer: "aws-webharto-transporti", text: "Transporti publik"},
-                    {nodeType: "gx_layer", layer: "aws-webharto-objektet", text: "Objektet"},
-                    {nodeType: "gx_layer", layer: "aws-webharto-rruget", text: "Rruget"}
+                    {nodeType: "gx_layer", layer: "local-webharto-bari", text: "Bari"},
+                    {nodeType: "gx_layer", layer: "local-webharto-ferm", text: "Fermët"},
+                    {nodeType: "gx_layer", layer: "local-webharto-park", text: "Parqet"},
+                    {nodeType: "gx_layer", layer: "local-webharto-pyll", text: "Pyjet"},
+                    {nodeType: "gx_layer", layer: "local-webharto-rrugice", text: "Rrugicët"},
+                    {nodeType: "gx_layer", layer: "local-webharto-varrezat", text: "Varrezat"},
+                    {nodeType: "gx_layer", layer: "local-webharto-rruget", text: "Rrugët"},
+                    {nodeType: "gx_layer", layer: "local-webharto-industri", text: "Zonat industriale"},
+                    {nodeType: "gx_layer", layer: "local-webharto-komercial", text: "Zonat Komerciale"},
+                    {nodeType: "gx_layer", layer: "local-webharto-transporti", text: "Transporti publik"},
+                    {nodeType: "gx_layer", layer: "local-webharto-objektet", text: "Objektet"},
+                    {nodeType: "gx_layer", layer: "local-webharto-rruget", text: "Rruget"}
                 ]
-            },
-            {nodeType: "gx_layer", layer: "test-Multipolygon", text: "test-Multipolygon" },
-            {nodeType: "gx_layer", layer: "webharto-points", text: "webharto-points" }
+            }
         ]
     },
     {
