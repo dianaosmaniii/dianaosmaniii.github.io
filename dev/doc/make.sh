@@ -1,3 +1,6 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+
 # generate pdf from markdown
 pandoc -f markdown-implicit_figures -o ./Webharo.pdf doc.md --toc
 

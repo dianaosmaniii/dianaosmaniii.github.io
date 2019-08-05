@@ -43,5 +43,8 @@ html-partials-compiler architecture.html > ../architecture.html
 html-partials-compiler doc.html > ../doc.html
 html-partials-compiler gis.html > ../gis.html
 
+# Run make.sh for doc
+./doc/make.sh
+
 # Create readme.md
 cp ./doc/doc.md ../readme.md
