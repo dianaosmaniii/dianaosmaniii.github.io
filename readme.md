@@ -37,8 +37,6 @@ Shtresat bazore jane marrë nga [Gjeoportali Shtetëror (RKS)](http://geoportal.
 
 
 ## Geoserver
-Für die Bereitstellung der Geodaten verwende ich einen open source [Geoserver](http://geoserver.org/). Die Konfiguration der verschiedenen Layers entspricht der Aufgabenstellung. Der Geoserver wird in der Amazone Cloud (AWS) betrieben und kann auch lokal gestartet werden (localhost).
-
 Unë kam përdorë një sistem i cili është [geoserver](http://geoserver.org/) (open source) për të siguruar shërbimet per shakarimin e gjeodatatave. Konfigurimi i shtresave të ndryshme korrespondon me detyrën. Geoserveri është instaluar në Amazon Cloud (AWS) dhe gjithashtu mund të startohet në sistemin lokal (_localhost_).
 
 ## ArcMap

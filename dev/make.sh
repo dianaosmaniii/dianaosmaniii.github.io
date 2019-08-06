@@ -18,6 +18,12 @@ cp -r web/u3/img ../web/u3
 cp -r web/u3/js ../web/u3
 cp -r web/u4/js ../web/u4
 
+# Run make.sh for doc
+./doc/make.sh
+
+# Create readme.md
+cp ./doc/doc.md ../readme.md
+
 # Create static html Files
 html-partials-compiler index.html > ../index.html
 html-partials-compiler web/u2.html > ../web/u2.html
@@ -45,9 +51,3 @@ html-partials-compiler web/u4/19_StringFormat.html > ../web/u4/19_StringFormat.h
 html-partials-compiler architecture.html > ../architecture.html
 html-partials-compiler doc.html > ../doc.html
 html-partials-compiler gis.html > ../gis.html
-
-# Run make.sh for doc
-./doc/make.sh
-
-# Create readme.md
-cp ./doc/doc.md ../readme.md
