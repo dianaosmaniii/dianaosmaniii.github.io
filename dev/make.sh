@@ -2,29 +2,35 @@
 cd "$(dirname "$0")"
 
 # Create folder structure
+echo "Create folder structure"
 mkdir -p ../web
 mkdir -p ../web/u2
 mkdir -p ../web/u3
 mkdir -p ../web/u4
 
 # Copy static resources
+echo "Copy static resources"
 cp -r css ../
 cp -r js ../
 cp -r doc ../
 
 # Copy some other resources (u3, u4)
+echo "Copy some other resources"
 cp -r web/u3/data ../web/u3
 cp -r web/u3/img ../web/u3
 cp -r web/u3/js ../web/u3
 cp -r web/u4/js ../web/u4
 
 # Run make.sh for doc
+echo "Run make.sh for doc"
 ./doc/make.sh
 
 # Create readme.md
+echo "Create readme.md"
 cp ./doc/doc.md ../readme.md
 
 # Create static html Files
+echo "Create static html Files"
 html-partials-compiler index.html > ../index.html
 html-partials-compiler web/u2.html > ../web/u2.html
 html-partials-compiler web/u3.html > ../web/u3.html
@@ -51,3 +57,5 @@ html-partials-compiler web/u4/19_StringFormat.html > ../web/u4/19_StringFormat.h
 html-partials-compiler architecture.html > ../architecture.html
 html-partials-compiler doc.html > ../doc.html
 html-partials-compiler gis.html > ../gis.html
+
+echo "OK"
