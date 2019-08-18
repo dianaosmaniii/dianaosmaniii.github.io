@@ -8,7 +8,7 @@ output: pdf_document
 
 Webhartografia
 ==============
-Hartografia është shkenca që merret me paraqitjen dhe hetimin e fenomeneve natyrore dhe të shoqërisë me anë të imazheve gjeografike dhe imazheve të tjera hartografike. Nisur nga ky përkufizim, arrihet në përfundimin se hartografia është një shkencë e ndërlikuar dhe përfshin disa disiplina.
+Web mapping është teknikë e shfrytëzimit të hartave që merren nga një sistem informacioni për të dhënat hapësinore dhe gjeografike (GIS). GIS është më shumë se kuptimi i saj i drejtpërdrejtë dhe shihet nga pikëpamja e shërbimit dhe konsumatorit. Hartat në dispozicion në World Wide Web shërbejnë për qëllime të ndryshme në varësi të llojit të përdoruesit që shërbehet.  GIS njihet edhe si hartim në internet.
 
 Komponentet teknike
 ===================

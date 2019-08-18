@@ -13,6 +13,7 @@ echo "Copy static resources"
 cp -r css ../
 cp -r js ../
 cp -r doc ../
+cp -r img ../
 
 # Copy some other resources (u3, u4)
 echo "Copy some other resources"
