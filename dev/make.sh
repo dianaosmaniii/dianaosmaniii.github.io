@@ -17,6 +17,7 @@ cp -r img ../
 
 # Copy some other resources (u3, u4)
 echo "Copy some other resources"
+cp -r web/u2/js/ ../web/u2
 cp -r web/u3/data ../web/u3
 cp -r web/u3/img ../web/u3
 cp -r web/u3/js ../web/u3
